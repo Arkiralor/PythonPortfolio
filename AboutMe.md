@@ -14,7 +14,7 @@ Currently looking to pursue a career in Software and/or web-application developm
  - Software Development Lifecycle models
 
 <h1>Experience</h1>
-  <h2>Department of Information Technology, Gauhati University</h2>
+  <h2>Department of Information Technology, Gauhati University - Feb 2020 to Mar 2021</h2>
   <h3>Opentype Fontface Designer & Developer</h3>
   Design & Development of two (2) sets of font faces for the Assamese (Eastern Nagari) script as described in the Assamese Script Grammar (c.2008).
   
@@ -24,7 +24,7 @@ Currently looking to pursue a career in Software and/or web-application developm
    - Publish font face as per criteria and specifications provided by client ( Govt. of Assam) using Fontlab.
    - Test and repair any issues in the published Font Face.
 
-  <h2>Mantra Associates</h2>
+  <h2>Mantra Associates - Dec 2020 to Mar 2021</h2>
   <h3>Trainee Web Developer & ICT Trainer</h3>
   
    - Host and provide support for online ICT skill-development seminars via distance-conferencing software.
