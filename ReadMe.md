@@ -1,7 +1,8 @@
 <h1>Contents</h1>
 
-1. **randomWalk:** *Python script to generate two-dimensional random walk via Matplotlib.*
+1. **randomWalk:** *Python script to generate a two-dimensional random walk via Matplotlib.*
 2. **WebScaper_ANN_newsagg:** *Python web-scraper to scrape headlines and excerpts from AnimeNewsNetwork.com.*
+3. **randomWalk3D.py:** *Python script to generate a three-dimensional random walk via Matplotlib.*
 
 
 <h1>About Me</h1>
