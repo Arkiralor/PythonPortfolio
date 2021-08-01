@@ -36,7 +36,6 @@ def scrape():
         link = element.get_attribute('href')
         header = result.find_element_by_css_selector('h3').text
         text = result.find_element_by_class_name('latest-article-excerpt').text
-        ##image = result.find_element_by_class_name('thumbnail')
         pageInfo.append({'header' : header, 'link' : link, 'text': text})
    return pageInfo
 
