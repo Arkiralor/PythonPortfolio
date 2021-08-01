@@ -6,9 +6,9 @@
 
 
 <h1>About Me</h1>
-<p>Born in 1992 and currently residing in Guwahati, Assam I have a B.Sc in Information Technology and a M.Sc in Computer Science from Gauhati University.
 
-Currently looking to pursue a career in Software and/or web-application development after the completion of my Post Graduation in Computer Science, hoping to someday expand my skillset to include IT Security/Encryption and Data-Science.</p>
+Born in 1992 and currently residing in Guwahati, Assam I have a **B.Sc in Information Technology** and a **M.Sc in Computer Science** from **Gauhati University**.
+Currently looking to pursue a career in **Software** and/or **web-application development** after the completion of my Post Graduation in Computer Science, hoping to someday expand my skillset to include **IT Security/Encryption and Data-Science**.
 
 <h1>Skillset</h1>
 
@@ -18,7 +18,7 @@ Currently looking to pursue a career in Software and/or web-application developm
  - Frontend Development:  HTML and CSS
  - Object Oriented Programming & Concepts
  - Software Architecture & Design
- - Software Development Lifecycle models
+ - Software Development Lifecycle Models
 
 <h1>Experience</h1>
   <h2>Department of Information Technology, Gauhati University - Feb 2020 to Mar 2021</h2>
