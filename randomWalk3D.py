@@ -57,8 +57,7 @@ while 1:
         n = int(input("Enter the number of steps: "))
 
         while n > 0:
-            direction = rand()
-            ls1.append(direction)
+            ls1.append(rand())
             n = n-1
         print(f'Directions Taken: {ls1}')
         i = 0
