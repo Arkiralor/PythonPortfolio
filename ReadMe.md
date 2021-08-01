@@ -1,4 +1,10 @@
-<h1>About</h1>
+<h1>Contents</h1>
+
+1. **randomWalk:** *Python script to generate two-dimensional random walk via Matplotlib.*
+2. **WebScaper_ANN_newsagg:** *Python web-scraper to scrape headlines and excerpts from AnimeNewsNetwork.com.*
+
+
+<h1>About Me</h1>
 <p>Born in 1992 and currently residing in Guwahati, Assam I have a B.Sc in Information Technology and a M.Sc in Computer Science from Gauhati University.
 
 Currently looking to pursue a career in Software and/or web-application development after the completion of my Post Graduation in Computer Science, hoping to someday expand my skillset to include IT Security/Encryption and Data-Science.</p>
