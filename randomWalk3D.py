@@ -47,16 +47,16 @@ while 1:
         ycoor = []
         zcoor = []
 
-
-
         xcoor.append(0)
         ycoor.append(0)
         zcoor.append(0)
-        ra.seed()
+        #ra.seed()
 
         n = int(input("Enter the number of steps: "))
+        n_copy = n
 
         while n > 0:
+            ra.seed()
             ls1.append(rand())
             n = n-1
         print(f'Directions Taken: {ls1}')
@@ -122,25 +122,26 @@ while 1:
     print(f'X-Axis Coordinates: {xcoor}')
     print(f'Y-Axis Coordinates: {ycoor}')
     print(f'Z-Axis Coordinates: {zcoor}')
-    ax = plt.axes(projection="3d")
 
+    plt.axes(projection="3d")
     plt.xlabel("X-Axis")
     plt.ylabel("Y-Axis")
 
     ##Drawing Origin
     plt.plot(0, 0, 0, color = 'blue', linewidth = 0, marker = 'o', markerfacecolor = 'blue', markersize = 3)
     ##Drawing X-Axis:
-    plt.plot(xorig, null_list_1, null_list_2, color = 'blue', linewidth = 1, marker = ',', markerfacecolor = 'blue', markersize = 0)
-
+    plt.plot(xorig, null_list_1, null_list_2, color = '#c41818', linewidth = 1, marker = ',', markerfacecolor = 'blue', markersize = 0, label = 'X-Axis')
     ##Drawing Y-Axis:
-    plt.plot(null_list_1, yorig, null_list_2, color = 'blue', linewidth = 1, marker = ',', markerfacecolor = 'blue', markersize = 0)
-
+    plt.plot(null_list_1, yorig, null_list_2, color = '#18c431', linewidth = 1, marker = ',', markerfacecolor = 'blue', markersize = 0, label = 'Y-Axis')
     ##Drawing Z-Axis:
-    plt.plot(null_list_1, null_list_2, zorig, color = 'blue', linewidth = 1, marker = ',', markerfacecolor = 'blue', markersize = 0)
+    plt.plot(null_list_1, null_list_2, zorig, color = '#185ac4', linewidth = 1, marker = ',', markerfacecolor = 'blue', markersize = 0, label = 'Z-Axis')
 
     ##Drawing random walk in three dimensions:
-    plt.plot(xcoor, ycoor, zcoor, color = 'black', linewidth = 1, marker = 'o', markerfacecolor = 'red', markersize = 3)
-    plt.title('Random 6-Directional Unary Walk')
+    plt.plot(xcoor, ycoor, zcoor, color = '#1a1515', linewidth = 1, marker = 'o', markerfacecolor = '#d91414', markersize = 3, label = f'User-specified 3D walk of {n_copy} steps.')
+    plt.title(f'3-Dimensional Unitary Walk after {n_copy} steps.')
+    plt.legend()
+    plt.grid(True)
+    plt.tight_layout()
     plt.show()
 
     ##Calculation of net displacement of particle after 'n' steps.
