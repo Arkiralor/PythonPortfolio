@@ -50,13 +50,11 @@ while 1:
         xcoor.append(0)
         ycoor.append(0)
         zcoor.append(0)
-        #ra.seed()
 
         n = int(input("Enter the number of steps: "))
         n_copy = n
 
         while n > 0:
-            ra.seed()
             ls1.append(rand())
             n = n-1
         print(f'Directions Taken: {ls1}')
