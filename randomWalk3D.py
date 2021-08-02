@@ -137,7 +137,7 @@ while 1:
     print(f'Y-Axis Coordinates: {ycoor}')
     print(f'Z-Axis Coordinates: {zcoor}')
 
-    ##Block V: Logging/Debugging Information
+    ##Logging/Debugging Information
     if dur[0] == 1:
         print(f'This operation took  {dur[0]}  minute and {dur[1]}  seconds to complete.')
     elif dur[0] == 0 or dur[0] > 1:
