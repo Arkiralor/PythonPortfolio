@@ -1,5 +1,14 @@
 import matplotlib.pyplot as plt
 import random as ra
+import time
+
+def timelapse(secs):    #Timing formatting function; strictly for logging/debugging purposes.
+   minutes = int(secs/60)
+   seconds = format((secs%60), "0.2f")
+
+   tlist = [minutes, seconds]
+
+   return tlist
 
 def abs1(num):
     if num >= 0:
@@ -52,6 +61,7 @@ while 1:
         zcoor.append(0)
 
         n = int(input("Enter the number of steps: "))
+        time_stamp_01 = time.time()  # Timer starts.
         n_copy = n
 
         while n > 0:
@@ -106,6 +116,12 @@ while 1:
             zorig.append(j)
             null_list_1.append(0)
             null_list_2.append(0)
+
+        # Timer ends.
+        time_stamp_02 = time.time() - time_stamp_01
+        # Basic formatting of timing information.
+        dur = timelapse(time_stamp_02)
+
     elif sd == 'N' or sd == 'n':
         print(f'"{sd}" chosen; exiting application.')
         exit()
@@ -120,6 +136,12 @@ while 1:
     print(f'X-Axis Coordinates: {xcoor}')
     print(f'Y-Axis Coordinates: {ycoor}')
     print(f'Z-Axis Coordinates: {zcoor}')
+
+    ##Block V: Logging/Debugging Information
+    if dur[0] == 1:
+        print(f'This operation took  {dur[0]}  minute and {dur[1]}  seconds to complete.')
+    elif dur[0] == 0 or dur[0] > 1:
+        print(f'This operation  took {dur[0]} minutes and {dur[1]} seconds to complete.')
 
     plt.axes(projection="3d")
     plt.xlabel("X-Axis")
