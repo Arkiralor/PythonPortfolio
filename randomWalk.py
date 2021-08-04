@@ -1,6 +1,46 @@
 import matplotlib.pyplot as plt
 import random as ra
 
+def axes(num):
+    import matplotlib.pyplot as plt
+
+    xorig = []
+    yorig = []
+    zorig = []
+    null_list_1 = []
+    null_list_2 = []
+
+    for j in range((0 - num), (0 + num + 1), 1):
+        xorig.append(j)
+        yorig.append(j)
+        zorig.append(j)
+        null_list_1.append(0)
+        null_list_2.append(0)
+
+    ##Drawing X-Axis:
+    plt.plot(xorig, null_list_1, color='#c41818', linewidth=1, marker=',', markerfacecolor='blue', markersize=0, label='X-Axis')
+    ##Drawing Y-Axis:
+    plt.plot(null_list_1, yorig, color='#18c431', linewidth=1, marker=',', markerfacecolor='blue', markersize=0, label='Y-Axis')
+
+def abs1(num):
+    if num >= 0:
+        return num
+    elif num < 0:
+        return num*(0-1)
+
+def maxmin(ls):
+    high = -35000000
+    low = 35000000
+    for i in range(len(ls)):
+        if ls[i] > high:
+            high = ls[i]
+        if ls[i] < low:
+            low = ls[i]
+    res = [high, low]
+    return res
+
+
+
 def rand():
     ra.seed()
     dire = ra.randrange(1, 5)
@@ -51,6 +91,11 @@ while 1:
                 xcoor.append(xcoor[i] + 0)
                 ycoor.append(ycoor[i] - 1)
             i = i+1
+
+        max_x = maxmin(xcoor)
+        max_y = maxmin(ycoor)
+        max_2ax = maxmin([abs1(max_x[0]), abs1(max_x[1]), abs1(max_y[0]), abs1(max_y[1])])
+        axes(max_2ax[0])
 
     else:
         exit()
