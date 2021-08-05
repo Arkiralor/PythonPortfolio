@@ -3,12 +3,12 @@ import random as ra
 import time
 
 def timelapse(secs):    #Timing formatting function; strictly for logging/debugging purposes.
-   minutes = int(secs/60)
-   seconds = format((secs%60), "0.2f")
+    minutes = int(secs/60)
+    seconds = format((secs%60), "0.2f")
 
-   tlist = [minutes, seconds]
+    tlist = [minutes, seconds]
 
-   return tlist
+    return tlist
 
 def abs1(num):
     if num >= 0:
@@ -49,7 +49,12 @@ def rand():
 
 sd = 'N'
 while 1:
-    sd = str(input("Generate Random Walk? [Y/N]: "))
+    try:
+        sd = str(input("Generate Random Walk? [Y/N]: "))
+    except Exception as e:
+        print(f'Invlaid entry; Error message: \n{e}.')
+        exit()
+
     if sd == 'Y' or sd == 'y':
         ls1 = []
         xcoor = []
@@ -60,7 +65,12 @@ while 1:
         ycoor.append(0)
         zcoor.append(0)
 
-        n = int(input("Enter the number of steps: "))
+        try:
+            n = int(input("Enter the number of steps: "))
+        except Exception as e2:
+            print(f'Invlaid entry; Error message: \n{e2}.')
+            exit()
+
         time_stamp_01 = time.time()  # Timer starts.
         n_copy = n
 
@@ -137,7 +147,7 @@ while 1:
     print(f'Y-Axis Coordinates: {ycoor}')
     print(f'Z-Axis Coordinates: {zcoor}')
 
-    ##Logging/Debugging Information
+    ##Block V: Logging/Debugging Information
     if dur[0] == 1:
         print(f'This operation took  {dur[0]}  minute and {dur[1]}  seconds to complete.')
     elif dur[0] == 0 or dur[0] > 1:
@@ -148,7 +158,7 @@ while 1:
     plt.ylabel("Y-Axis")
 
     ##Drawing Origin
-    plt.plot(0, 0, 0, color = 'blue', linewidth = 0, marker = 'o', markerfacecolor = 'blue', markersize = 3)
+    plt.plot(0, 0, 0, color = '#5d9c25', linewidth = 0, marker = 'o', markerfacecolor = '#6be302', markersize = 7)
     ##Drawing X-Axis:
     plt.plot(xorig, null_list_1, null_list_2, color = '#c41818', linewidth = 1, marker = ',', markerfacecolor = 'blue', markersize = 0, label = 'X-Axis')
     ##Drawing Y-Axis:
@@ -157,9 +167,15 @@ while 1:
     plt.plot(null_list_1, null_list_2, zorig, color = '#185ac4', linewidth = 1, marker = ',', markerfacecolor = 'blue', markersize = 0, label = 'Z-Axis')
 
     ##Drawing random walk in three dimensions:
-    plt.plot(xcoor, ycoor, zcoor, color = '#1a1515', linewidth = 1, marker = 'o', markerfacecolor = '#d91414', markersize = 3, label = f'User-specified 3D walk of {n_copy} steps.')
+    plt.plot(xcoor, ycoor, zcoor, color = '#1a1515', linewidth = 1, marker = 'o', markerfacecolor = '#ff0000', markersize = 3, label = f'User-specified 3D walk of {n_copy} steps.')
+    ##Drawing final position:
+    plt.plot(xcoor[len(xcoor)-1], ycoor[len(ycoor)-1], zcoor[len(zcoor)-1], color='#050505', linewidth=1, marker='o', markerfacecolor='#ffffff', markersize=7, label = 'Final Position')
+    plt.plot(0, 0, 0, color='#5d9c25', linewidth=0, marker='o', markerfacecolor='#6be302', markersize=7, label='Initial Position')
+    ##Drawing initial position:
     plt.title(f'3-Dimensional Unitary Walk after {n_copy} steps.')
-    plt.legend()
+    
+   ##Plot features:
+   plt.legend()
     plt.grid(True)
     plt.tight_layout()
     plt.show()
