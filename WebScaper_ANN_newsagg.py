@@ -13,7 +13,7 @@ path = "D:\Libraries\Arkiralor's Software Setups\Chromedriver\chromedriver.exe"
 # create instance of webdriver
 driver = webdriver.Chrome(path)
 # site url
-url = 'https://bleedingcool.com/comics/manga/'
+url = 'https://www.animenewsnetwork.com/'
 # Code to open a specific url
 driver.get(url)
 
