@@ -27,7 +27,7 @@ def axes3d(num):
     ##Drawing Y-Axis:
     plt.plot(null_list_1, yorig, null_list_2, color='#18c431', linewidth=1, marker=',', markerfacecolor='#18c431',markersize=0, label='Y-Axis')
     ##Drawing Z-Axis:
-    plt.plot(null_list_1, null_list_2, zorig, color ='#185ac4', linewidth=1, marker =',', markerfacecolor = 'blue',markersize=0, label='Z-Axis')
+    plt.plot(null_list_1, null_list_2, zorig, color ='#185ac4', linewidth=1, marker =',', markerfacecolor = '#1350ba',markersize=0, label='Z-Axis')
 
 ##Method to simultaneously determine both the largest and smallest value in a list of numbers (int or float):
 def maxmin(ls):
