@@ -5,9 +5,7 @@ import gc
 
 ##Method to draw the X,Y and Z reference Axes:
 def axes3d(num):
-    import math as ma
-
-    num = ma.floor(num)
+    num = m.floor(num)
     xorig = []
     yorig = []
     zorig = []
@@ -39,7 +37,6 @@ def maxmin(ls):
         if ls[i] < low:
             low = ls[i]
     res = [high, low]
-    #print(res)
     return res
 
 ##Method to draw the Reference XY-Plane, denoting the ground-level:
