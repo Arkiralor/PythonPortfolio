@@ -2,10 +2,9 @@ import matplotlib.pyplot as plt
 import math as m
 import random as ra
 import gc
-import numpy as np
 
+##Method to draw the X,Y and Z reference Axes:
 def axes3d(num):
-    #import matplotlib.pyplot as plt
     import math as ma
 
     num = ma.floor(num)
@@ -30,18 +29,36 @@ def axes3d(num):
     ##Drawing Z-Axis:
     plt.plot(null_list_1, null_list_2, zorig, color ='#185ac4', linewidth=1, marker =',', markerfacecolor = 'blue',markersize=0, label='Z-Axis')
 
-
+##Method to simultaneously determine both the largest and smallest value in a list of numbers (int or float):
 def maxmin(ls):
-    high = -35000000000
-    low = 35000000000
-    for i in range(len(ls)):
+    high = 1.2E-38
+    low = 3.4E+38
+    for i in range(len(ls)-1):
         if ls[i] > high:
             high = ls[i]
         if ls[i] < low:
             low = ls[i]
     res = [high, low]
+    #print(res)
     return res
 
+##Method to draw the Reference XY-Plane, denoting the ground-level:
+def xy_plane(num):
+    x = []
+    y = []
+    null_list_1 = []
+    num_minus = 0 - m.floor(num)
+    num_plus = 0 + m.floor(num) + 1
+
+    for i in range(num_minus,num_plus):
+        for j in range(num_minus,num_plus):
+            x.append(i)
+            y.append(j)
+            null_list_1.append(0)
+
+    plt.plot(x, y, color = '#bababa', marker = ',', linewidth = 0, markersize = 1, alpha=0.2)
+
+##Method to draw the trajectory of a single, random Projectile, given the height from which it was launched with reference to the ground-level:
 def projectile3D(height):
     x_cor = []
     y_cor = []
@@ -51,7 +68,7 @@ def projectile3D(height):
     g = 9.81
     phi = m.radians(ra.randrange(0,361,1)) #PHI is the angle the path makes on the XY-plane with the x-axis.
     theta = m.radians(ra.randrange(0,91,1)) #Theta is the initial angle of projection.
-    int_v = ra.randrange(1,101)
+    int_v = ra.randrange(30,61)
 
     u_h = int_v*m.cos(theta)
     u_v = int_v*m.sin(theta)
@@ -81,30 +98,44 @@ def projectile3D(height):
     max_z = maxmin(z_cor)
     max_of_all = maxmin([abs(max_x[0]), abs(max_x[1]), abs(max_y[0]), abs(max_y[1]), abs(max_z[0]), abs(max_z[1])])
 
-    plt.plot(x_cor, y_cor, z_cor, linewidth=1, label=f'θ = {format(m.degrees(theta), "0.1f")}deg; U = {int_v}m/s; h = {height}m.')
+    plt.plot(x_cor, y_cor, z_cor, linewidth=1, label=f'θ = {format(m.degrees(theta), "0.1f")}deg; U = {int_v}m/s; h = {height}m; Φ = {format(m.degrees(phi), "0.1f")}deg.')
+    plt.plot(x_cor[0],y_cor[0],z_cor[0], color = '#303030', marker='o',markerfacecolor='#69c400', markersize=5)
+    plt.plot(x_cor[len(x_cor)-1], y_cor[len(y_cor)-1], z_cor[len(z_cor)-1], color='#303030', marker='o', markerfacecolor='#ffffff', markersize=5)
+
 
     return max_of_all[0]
 
+##Packing main script statements in a method called 'main':
+def main():
+    ##For Debugging Purposes; Comment-out for deployment.
+    #num_of_projections = 1
+    #height = 0
+
+    plt.axes(projection="3d")
+
+    try:
+        num_of_projections = int(input("Enter the number of projections you require: "))
+        height = int(input("Enter the height (along vertical axis) of the projection(s): "))
+    except Exception as e:
+        print(e)
+        exit()
+
+    ##Reference Plane Construction:
+    #xy_plane(250)
+
+    for i in range(num_of_projections):
+        max_all = projectile3D(height)
+
+    axes3d(max_all)
+
+    ##Legend View; Comment-Out for deployment.
+    plt.legend()
+    plt.tight_layout()
+    plt.show()
+    gc.collect()
+
+    return None
 
 
+main()
 
-#num = 0
-max_all = []
-plt.axes(projection="3d")
-
-try:
-    num_of_projections = int(input("Enter the number of projections you require: "))
-    height = int(input("Enter the height (along vertical axis) of the projection(s): "))
-except Exception as e:
-    print(e)
-    exit()
-
-for i in range(num_of_projections):
-    max_all.append(projectile3D(height))
-
-absolute = max(max_all)
-axes3d(absolute)
-#plt.legend()
-plt.tight_layout()
-plt.show()
-gc.collect()
