@@ -77,7 +77,8 @@ def projectile3D(height):
     u_z = u_v
 
     time_of_flight = (2 * int_v * m.sin(theta)) / g
-    ##floor_range = ((int_v ** 2) * m.sin(2 * theta)) / g
+    ##Did not end up using it, but this can be used as a loop condition as well such as for any value of displacement along XY-Plane, 'd': "while d <= floor_range".
+    #floor_range = ((int_v ** 2) * m.sin(2 * theta)) / g
 
     t = 0
     x = 0
