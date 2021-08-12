@@ -2,9 +2,9 @@
 
 1. **randomWalk:** *Python script to generate a two-dimensional random walk via Matplotlib.*
 2. **WebScaper_ANN_newsagg:** *Python web-scraper to scrape headlines and excerpts from AnimeNewsNetwork.com.*
-3. **randomWalk3D.py:** *Python script to generate a three-dimensional random walk via Matplotlib.*
-4. **projectileSim.py** *Python script to trace the trajectory of 'n' projectiles via Matplotlib.*
-5. **projectileSim3D.py** *Python script to trace the trajectory of 'n' projectiles in 3-dimensional space via Matplotlib.*
+3. **randomWalk3D:** *Python script to generate a three-dimensional random walk via Matplotlib.*
+4. **projectileSim:** *Python script to trace the trajectory of 'n' projectiles via Matplotlib.*
+5. **projectileSim3D:** *Python script to trace the trajectory of 'n' projectiles in 3-dimensional space via Matplotlib.*
 
 
 <h1>About Me</h1>
