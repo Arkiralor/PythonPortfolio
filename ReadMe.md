@@ -23,7 +23,14 @@ Currently looking to pursue a career in **Software** and/or **web-application de
  - Software Development Lifecycle Models
 
 <h1>Experience</h1>
-  <h2>Department of Information Technology, Gauhati University - Feb 2020 to Mar 2021</h2>
+  <h2>TechVariable - Oct 2021 to ...</h2>
+  <h3>Programmer Analyst Trainee</h3>
+  
+  - Develop applications and modules in Python using the following libraries/frameworks:
+    FastAPI, Django Restframework, Selenium Webdriver, SQLAlchemy ORM, Pytest Allure.
+  - Coordinate with team-mates and clients.  
+  
+  <h2>Department of Information Technology, Gauhati University - Nov 2020 to Mar 2021</h2>
   <h3>Opentype Fontface Designer & Developer</h3>
   Design & Development of two (2) sets of font faces for the Assamese (Eastern Nagari) script as described in the Assamese Script Grammar (c.2008).
   
