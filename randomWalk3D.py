@@ -2,19 +2,23 @@ import matplotlib.pyplot as plt
 import random as ra
 import time
 
-def timelapse(secs):    #Timing formatting function; strictly for logging/debugging purposes.
+
+# Timing formatting function; strictly for logging/debugging purposes.
+def timelapse(secs):
     minutes = int(secs/60)
-    seconds = format((secs%60), "0.2f")
+    seconds = format((secs % 60), "0.2f")
 
     tlist = [minutes, seconds]
 
     return tlist
+
 
 def abs1(num):
     if num >= 0:
         return num
     elif num < 0:
         return num*(0-1)
+
 
 def maxmin(ls):
     high = -35000000
@@ -26,6 +30,7 @@ def maxmin(ls):
             low = ls[i]
     res = [high, low]
     return res
+
 
 def rand():
     ra.seed()
@@ -46,6 +51,7 @@ def rand():
         dire = None
         return 0
     return dire
+
 
 sd = 'N'
 while 1:
@@ -116,7 +122,8 @@ while 1:
         resx = maxmin(xcoor)
         resy = maxmin(ycoor)
         resz = maxmin(zcoor)
-        res_all = maxmin([abs1(resx[0]), abs1(resx[1]), abs1(resy[0]), abs1(resy[1]), abs1(resz[0]), abs1(resz[1])])
+        res_all = maxmin([abs1(resx[0]), abs1(resx[1]), abs1(
+            resy[0]), abs1(resy[1]), abs1(resz[0]), abs1(resz[1])])
         high = res_all[0]
 
         ##Constructing coordinate set for origins of all axes.
@@ -149,42 +156,116 @@ while 1:
 
     ##Block V: Logging/Debugging Information
     if dur[0] == 1:
-        print(f'This operation took  {dur[0]}  minute and {dur[1]}  seconds to complete.')
+        print(
+            f'This operation took  {dur[0]}  minute and {dur[1]}  seconds to complete.')
     elif dur[0] == 0 or dur[0] > 1:
-        print(f'This operation  took {dur[0]} minutes and {dur[1]} seconds to complete.')
+        print(
+            f'This operation  took {dur[0]} minutes and {dur[1]} seconds to complete.')
 
     plt.axes(projection="3d")
     plt.xlabel("X-Axis")
     plt.ylabel("Y-Axis")
 
     ##Drawing Origin
-    plt.plot(0, 0, 0, color = '#5d9c25', linewidth = 0, marker = 'o', markerfacecolor = '#6be302', markersize = 7)
+    plt.plot(
+        0,
+        0,
+        0,
+        color='#5d9c25',
+        linewidth=0,
+        marker='o',
+        markerfacecolor='#6be302',
+        markersize=7
+    )
     ##Drawing X-Axis:
-    plt.plot(xorig, null_list_1, null_list_2, color = '#c41818', linewidth = 1, marker = ',', markerfacecolor = 'blue', markersize = 0, label = 'X-Axis')
+    plt.plot(
+        xorig,
+        null_list_1,
+        null_list_2,
+        color='#c41818',
+        linewidth=1,
+        marker=',',
+        markerfacecolor='blue',
+        markersize=0,
+        label='X-Axis'
+    )
     ##Drawing Y-Axis:
-    plt.plot(null_list_1, yorig, null_list_2, color = '#18c431', linewidth = 1, marker = ',', markerfacecolor = 'blue', markersize = 0, label = 'Y-Axis')
+    plt.plot(
+        null_list_1,
+        yorig,
+        null_list_2,
+        color='#18c431',
+        linewidth=1,
+        marker=',',
+        markerfacecolor='blue',
+        markersize=0,
+        label='Y-Axis'
+    )
     ##Drawing Z-Axis:
-    plt.plot(null_list_1, null_list_2, zorig, color = '#185ac4', linewidth = 1, marker = ',', markerfacecolor = 'blue', markersize = 0, label = 'Z-Axis')
+    plt.plot(
+        null_list_1,
+        null_list_2,
+        zorig, color='#185ac4',
+        linewidth=1,
+        marker=',',
+        markerfacecolor='blue',
+        markersize=0,
+        label='Z-Axis'
+    )
 
     ##Drawing random walk in three dimensions:
-    plt.plot(xcoor, ycoor, zcoor, color = '#1a1515', linewidth = 1, marker = 'o', markerfacecolor = '#ff0000', markersize = 3, label = f'User-specified 3D walk of {n_copy} steps.')
+    plt.plot(
+        xcoor,
+        ycoor,
+        zcoor,
+        color='#1a1515',
+        linewidth=1,
+        marker='o',
+        markerfacecolor='#ff0000',
+        markersize=3,
+        label=f'User-specified 3D walk of {n_copy} steps.'
+    )
     ##Drawing final position:
-    plt.plot(xcoor[len(xcoor)-1], ycoor[len(ycoor)-1], zcoor[len(zcoor)-1], color='#050505', linewidth=1, marker='o', markerfacecolor='#ffffff', markersize=7, label = 'Final Position')
-    plt.plot(0, 0, 0, color='#5d9c25', linewidth=0, marker='o', markerfacecolor='#6be302', markersize=7, label='Initial Position')
+    plt.plot(
+        xcoor[len(xcoor)-1],
+        ycoor[len(ycoor)-1],
+        zcoor[len(zcoor)-1],
+        color='#050505',
+        linewidth=1,
+        marker='o',
+        markerfacecolor='#ffffff',
+        markersize=7,
+        label='Final Position'
+    )
+    plt.plot(
+        0,
+        0,
+        0,
+        color='#5d9c25',
+        linewidth=0,
+        marker='o',
+        markerfacecolor='#6be302',
+        markersize=7,
+        label='Initial Position'
+    )
     ##Drawing initial position:
     plt.title(f'3-Dimensional Unitary Walk after {n_copy} steps.')
-    
+
    ##Plot features:
-   plt.legend()
+    plt.legend()
     plt.grid(True)
     plt.tight_layout()
     plt.show()
 
     ##Calculation of net displacement of particle after 'n' steps.
-    displacement = ((xcoor[len(xcoor)-1]**2) + (ycoor[len(ycoor)-1]**2) + (zcoor[len(zcoor)-1]**2))**0.5
+    displacement = (
+        (
+            xcoor[len(xcoor)-1]**2
+        )
+        + (
+            ycoor[len(ycoor)-1]**2
+        )
+        + (
+            zcoor[len(zcoor)-1]**2)
+    )**0.5
     print(f'Net Displacement: {format(displacement, "0.2f")} units.')
-
-
-
-
-
